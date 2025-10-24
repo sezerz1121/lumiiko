@@ -25,17 +25,17 @@ const poppins = Poppins({
 const uxum = localFont({
   src: [
     {
-      path: "../../public/fonts/uxumlight.otf",
+      path: "./fonts/uxumlight.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/uxumregular.otf",
+      path: "./fonts/uxumregular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/uxumbold.otf",
+      path: "./fonts/uxumbold.otf",
       weight: "700",
       style: "normal",
     },
@@ -47,17 +47,17 @@ const uxum = localFont({
 const neue = localFont({
   src: [
     {
-      path: "../../public/fonts/NeueMontreal-Medium.otf",
+      path: "./fonts/NeueMontreal-Medium.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/NeueMontreal-Regular.otf",
+      path: "./fonts/NeueMontreal-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/NeueMontreal-Bold.otf",
+      path: "./fonts/NeueMontreal-Bold.otf",
       weight: "700",
       style: "normal",
     },

@@ -34,7 +34,7 @@ const About = () => {
           md:text-left
           
         ">
-          <h2 className="font-uxum font-bold text-2xl sm:text-3xl text-[#FB744F] mb-3">
+          <h2 className="font-uxum font-bold text-2xl sm:text-3xl md:text-4xl text-[#FB744F] mb-3">
             Who We Are
           </h2>
 
