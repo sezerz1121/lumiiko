@@ -34,22 +34,22 @@ const About = () => {
           md:text-left
           
         ">
-          <h2 className="font-poppins font-bold text-2xl sm:text-3xl text-[#FB744F] mb-3">
+          <h2 className="font-uxum font-bold text-2xl sm:text-3xl text-[#FB744F] mb-3">
             Who We Are
           </h2>
 
-          <p className="font-poppins font-bold text-base sm:text-lg md:text-xl text-[#474747] leading-[194.7%] mb-6 sm:mb-8 text-justify md:text-left ">
+          <p className="font-neue font-bold text-base sm:text-lg md:text-xl text-[#474747] leading-[194.7%] mb-6 sm:mb-8 text-justify md:text-left ">
             We are a small, dedicated team that loves working with businesses.
             Whether you run a beauty parlour, medical clinic, restaurant, or
             coaching class – we help you build a strong online presence.
             </p>
 
 
-          <h3 className="font-poppins font-bold text-lg sm:text-xl mb-3 sm:mb-4 text-left">
+          <h3 className="font-uxum font-bold text-lg sm:text-xl mb-3 sm:mb-4 text-left">
             Our mission is simple
           </h3>
 
-          <p className="font-poppins font-bold text-base sm:text-lg md:text-xl text-[#474747] text-justify md:text-left leading-[194.7%]">
+          <p className="font-neue font-bold text-base sm:text-lg md:text-xl text-[#474747] text-justify md:text-left leading-[194.7%]">
             Affordable websites that actually bring leads, not just look good.
           </p>
         </div>
