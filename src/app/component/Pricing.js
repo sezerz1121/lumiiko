@@ -22,7 +22,7 @@ const Pricing = () => {
                     <div className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl text-center'>
                         Simple & Affordable Pricing
                     </div>
-                  <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center w-full max-w-[90%] mx-auto gap-6 py-6">
+                  <div className="flex flex-col sm:flex-row items-center justify-center w-full max-w-[90%] mx-auto gap-6 py-6">
                     <div className="bg-linear-to-b from-[#BAEAFD] via-[#BAEAFD] to-[#FFFFFF] w-full sm:w-72 md:w-80 lg:w-96 p-6 rounded-xl border border-[#737373]/50 overflow-hidden flex flex-col justify-between">
 
                         {/* Plan Title */}
