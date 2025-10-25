@@ -23,7 +23,7 @@ const Pricing = () => {
                         Simple & Affordable Pricing
                     </div>
                   <div className="flex flex-col sm:flex-row items-center justify-center w-full max-w-[90%] mx-auto gap-6 py-6">
-                    <div className="bg-linear-to-b from-[#BAEAFD] via-[#BAEAFD] to-[#FFFFFF] w-full sm:w-72 md:w-80 lg:w-96 p-6 rounded-xl border border-[#737373]/50 overflow-hidden flex flex-col justify-between">
+                    <div className="bg-linear-to-b from-[#BAEAFD] via-[#BAEAFD] to-[#FFFFFF] w-full sm:w-72 md:w-80 lg:w-96 p-6 rounded-xl border border-[#737373]/50 overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-all duration-200 min-h-[472px] sm:min-h-[472px] md:min-h-[472px]">
 
                         {/* Plan Title */}
                         <div className='font-albertSans font-semibold text-lg mb-1 tracking-[2%]'>
@@ -81,7 +81,7 @@ const Pricing = () => {
 
                         <div className="bg-linear-to-b from-[#F9E9E5] via-[#F9E9E5] to-[#FFFFFF] 
                                         w-full sm:w-72 md:w-80 lg:w-96 p-6 rounded-xl border border-[#737373]/50 
-                                        overflow-hidden flex flex-col justify-between">
+                                        overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-all duration-200 min-h-[472px] sm:min-h-[472px] md:min-h-[472px]">
 
                             {/* Plan Title */}
                             <div className='font-albertSans font-semibold text-lg mb-1 tracking-[2%]'>
@@ -139,7 +139,7 @@ const Pricing = () => {
 
                         <div className="bg-linear-to-b from-[#BDEBBB] via-[#BDEBBB] to-[#FFFFFF] 
                                         w-full sm:w-72 md:w-80 lg:w-96 p-6 rounded-xl border border-[#737373]/50 
-                                        overflow-hidden flex flex-col justify-between">
+                                        overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-all duration-200 min-h-[472px] sm:min-h-[472px] md:min-h-[472px]">
 
                             {/* Plan Title */}
                             <div className='font-albertSans font-semibold text-lg mb-1 tracking-[2%]'>
@@ -196,7 +196,7 @@ const Pricing = () => {
 
                         <div className="bg-linear-to-b from-[#DEE6FD] via-[#DEE6FD] to-[#FFFFFF] 
                                         w-full sm:w-72 md:w-80 lg:w-96 p-6 rounded-xl border border-[#737373]/50 
-                                        overflow-hidden flex flex-col justify-between">
+                                        overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-all duration-200 min-h-[472px] sm:min-h-[472px] md:min-h-[472px]">
 
                             {/* Plan Title */}
                             <div className='font-albertSans font-semibold text-lg mb-1 tracking-[2%]'>
