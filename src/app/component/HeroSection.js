@@ -31,7 +31,7 @@ const HeroSection = () => {
 
         {/* Right Image */}
         <div className="hidden md:flex md:w-1/2 justify-center">
-          <img src="/herosectionphone.png" alt="Phone mockup" className="w-full scale-70 lg:scale-85" />
+          <img src="/herosectionphone.png" alt="Phone mockup" className="w-full scale-80 lg:scale-95" />
         </div>
       </div>
     </div>

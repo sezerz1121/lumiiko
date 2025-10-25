@@ -6,6 +6,7 @@ const About2 = () => {
         <div className="
         w-full
         min-h-screen
+        md:min-h-[80vh]
         flex
         flex-col
         items-center

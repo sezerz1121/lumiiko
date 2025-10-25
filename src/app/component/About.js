@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="
       w-full
-      min-h-screen
+      h-[90vh]
       flex
       items-center
       justify-center
