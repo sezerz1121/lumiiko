@@ -5,6 +5,7 @@ import About from "./component/About";
 import About2 from "./component/About2";
 import Ourwork from "./component/Ourwork";
 import WhyBuisnessTrustUs from "./component/WhyBuisnessTrustUs";
+import Pricing from "./component/Pricing";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <About2/>
       <Ourwork/>
       <WhyBuisnessTrustUs/>
+      <Pricing/>
     </>
   );
 }

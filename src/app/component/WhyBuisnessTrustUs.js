@@ -18,7 +18,7 @@ const WhyBuisnessTrustUs = () => {
         md:gap-6
         
         ">
-            <div className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl '>
+            <div className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl text-center'>
                 Why Businesses Trust Us
             </div>
             <div className=' w-full md:w-[90%] flex items-center justify-around'>

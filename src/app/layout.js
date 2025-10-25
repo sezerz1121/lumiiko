@@ -1,5 +1,5 @@
 // app/layout.tsx
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Albert_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -21,6 +21,12 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const albertSans = Albert_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-albert-sans",
+  display: "swap",
+});
 // ✅ Local Font (Uxum) — All weights in one declaration
 const uxum = localFont({
   src: [
@@ -75,7 +81,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${uxum.variable} ${neue.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${uxum.variable} ${neue.variable} ${albertSans.variable}`}
     >
       <body className="antialiased">{children}</body>
     </html>
