@@ -5,7 +5,8 @@ const Ourwork = () => {
     <>
         <div className="
         w-full
-        h-[80vh]
+        min-h-screen
+        md:min-h-[80vh]
         flex
         flex-col
         items-center
@@ -19,7 +20,7 @@ const Ourwork = () => {
              <div className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl '>
                 Our Recent Work
             </div>
-            <div className="h-[80%] w-[80%] md:w-full flex flex-col md:flex-row gap-6 items-center justify-around gap-6">
+            <div className="h-[80%] w-[80%] md:w-full flex flex-col md:flex-row gap-6 items-center justify-around ">
                 <div className='flex flex-col items-start gap-4'>
                     <a href="https://rajpalassociates-fe.vercel.app/" target="_blank" rel="noopener noreferrer">
                         <img src="/ourworkrealestate.png" className="cursor-pointer" alt="Real Estate Website" />
