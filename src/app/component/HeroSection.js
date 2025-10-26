@@ -57,9 +57,13 @@ const HeroSection = () => {
           <p className="text-base leading-[248%] md:leading-[150%] w-[90%] sm:text-base md:text-lg lg:text-xl text-[#474747] text-center md:text-left max-w-md md:max-w-full">
             From salons to shops, doctors to restaurants – we create modern, mobile-friendly websites that bring you more customers.
           </p>
-          <button className="bg-[#FB744F] hover:bg-[#e06340] text-white font-medium rounded-3xl px-6 py-3 text-lg mt-4 cursor-pointer">
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="bg-[#FB744F] hover:bg-[#e06340] text-white font-medium rounded-3xl px-6 py-3 text-lg mt-4 cursor-pointer "
+          >
             Get Your Free Quote
           </button>
+
         </div>
 
         {/* Right Image */}

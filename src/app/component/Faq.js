@@ -81,7 +81,7 @@ const Faq = () => {
   }, []);
 
   return (
-    <div id="faq" className="w-full min-h-[70vh] flex flex-col items-center px-4 sm:px-6 md:px-8 py-10 bg-white gap-10">
+    <div id="faq" className="w-full min-h-[60vh] flex flex-col items-center px-4 sm:px-6 md:px-8 py-10 bg-white gap-10">
       <div className="font-poppins font-bold text-2xl sm:text-3xl md:text-4xl text-center leading-snug">
         Frequently Asked Questions
       </div>
