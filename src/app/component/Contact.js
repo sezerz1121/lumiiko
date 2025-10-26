@@ -6,9 +6,45 @@ import { FiMail } from "react-icons/fi";
 import { FaPhone } from "react-icons/fa6";
 import { AiOutlineBulb } from "react-icons/ai";
 import { useSearchParams } from "next/navigation";
+import axios from "axios";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  subject: "",
+  requirements: ""
+  });
+  const [message,setMessage] = useState("");
+
+ const submitForm = async () => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/users/sendEmail`,
+      formData
+    );
+    console.log("Form submitted:", response.data);
+
+    // Show success message for 3 seconds
+    setMessage("Form submitted successfully!");
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
+
+    // Reset form
+    setFormData({ name: "", email: "", phone: "", subject: "", requirements: "" });
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    setMessage("Failed to submit form. Try again.");
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
+  }
+};
+
+
   const sectionRef = useRef(null);
   const searchParams = useSearchParams();
   const planFromQuery = searchParams.get("plan") || "";
@@ -64,15 +100,26 @@ const Contact = () => {
         {/* Form */}
         <div className="form-section w-full md:w-[50%] flex flex-col items-center gap-[2] md:pag-[-1]">
           <p className="w-[80%] md:w-[40%] mb-2">Name</p>
-          <input placeholder="Enter Name" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
+          <input 
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          placeholder="Enter Name" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
           <p className="w-[80%] md:w-[40%] mb-2">Email</p>
-          <input type="email" placeholder="Enter Email" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
+          <input
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+           type="email" placeholder="Enter Email" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
           <p className="w-[80%] md:w-[40%] mb-2">Phone no</p>
-          <input type="tel"  placeholder="Enter Phone no" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
+          <input
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+           type="tel"  placeholder="Enter Phone no" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
             <p className="w-[80%] md:w-[40%] mb-2">Subject</p>
             <select
-            value={selectedPlan}
-            onChange={(e) => setSelectedPlan(e.target.value)}
+            value={selectedPlan || formData.subject}
+            
+            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+
             className="font-albertSans font-regular border border-[#FB744F] pl-5 pr-10 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3 appearance-none bg-white cursor-pointer"
             defaultValue=""
           >
@@ -87,11 +134,19 @@ const Contact = () => {
           
           <p className="w-[80%] md:w-[40%] mb-2">Your Requirements</p>
           <textarea
-  placeholder="Enter Your Requirements"
-  className="font-albertSans font-regular border border-[#FB744F] pl-5 pt-3 w-[80%] md:w-[40%] h-40 rounded-lg active:border-[#FB744F] mb-3 text-top "
-></textarea>
-          <div className="font-albertSans font-regular border border-[#FB744F] w-[80%] md:w-[40%] h-9 flex items-center justify-center rounded-lg bg-[#FFEBE5] cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]">
+            placeholder="Enter Your Requirements"
+            value={formData.requirements}
+
+            onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
+            className="font-albertSans font-regular border border-[#FB744F] pl-5 pt-3 w-[80%] md:w-[40%] h-40 rounded-lg active:border-[#FB744F] mb-3 text-top "
+          ></textarea>
+          <div
+          onClick={submitForm}
+           className="font-albertSans font-regular border border-[#FB744F] w-[80%] md:w-[40%] h-9 flex items-center justify-center rounded-lg bg-[#FFEBE5] cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]">
             Submit
+          </div>
+          <div className={`mt-3 ${message?.includes("Failed") ? "text-red-400" : "text-green-400"}`}>
+            {message && message}
           </div>
         </div>
 
@@ -130,5 +185,6 @@ const Contact = () => {
     </div>
   );
 };
+
 
 export default Contact;
