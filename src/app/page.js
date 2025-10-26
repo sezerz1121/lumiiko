@@ -6,6 +6,7 @@ import About2 from "./component/About2";
 import Ourwork from "./component/Ourwork";
 import WhyBuisnessTrustUs from "./component/WhyBuisnessTrustUs";
 import Pricing from "./component/Pricing";
+import Faq from "./component/Faq";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Ourwork/>
       <WhyBuisnessTrustUs/>
       <Pricing/>
+      <Faq/>
     </>
   );
 }
