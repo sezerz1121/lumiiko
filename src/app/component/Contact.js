@@ -81,15 +81,23 @@ const Contact = () => {
             Tell us about your business – we’ll reply in 24 hours.
           </div>
           <div className="font-albertSans font-bold text-xs flex flex-col items-center gap-2 justify-center">
-            <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer">
-              <FiMail /> <p>Lumiiko@gmail.com</p>
+            <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer"
+                onClick={() => window.location.href = "mailto:Lumiiko@gmail.com"}>
+              <FiMail />
+              <p>Lumiiko@gmail.com</p>
             </div>
-            <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer">
-              <FaPhone /> <p>9265856366</p>
+
+            <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer"
+                onClick={() => window.location.href = "tel:9265856366"}>
+              <FaPhone />
+              <p>9265856366</p>
             </div>
+
             <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer">
-              <AiOutlineBulb /> <p>From ideas to reality.</p>
+              <AiOutlineBulb />
+              <p>From ideas to reality.</p>
             </div>
+
           </div>
           <div className="font-albertSans font-bold text-sm md:text-lg w-[80%] md:w-[40%] flex items-center gap-4 justify-center text-center">
             Your vision. Our expertise. Let’s talk.
