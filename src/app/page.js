@@ -1,5 +1,6 @@
 "use client";
-import Image from "next/image";
+
+import { Suspense } from "react";
 import Navbar from "./component/Navbar";
 import HeroSection from "./component/HeroSection";
 import About from "./component/About";
@@ -22,7 +23,9 @@ export default function Home() {
       <WhyBuisnessTrustUs/>
       <Pricing />
       <Faq />
-      <Contact />
+      <Suspense fallback={<div>Loading Contact...</div>}>
+        <Contact />
+      </Suspense>
       <Footer/>
     </>
   );
