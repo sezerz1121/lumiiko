@@ -66,9 +66,9 @@ const Contact = () => {
           <p className="w-[80%] md:w-[40%] mb-2">Name</p>
           <input placeholder="Enter Name" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
           <p className="w-[80%] md:w-[40%] mb-2">Email</p>
-          <input placeholder="Enter Email" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
+          <input type="email" placeholder="Enter Email" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
           <p className="w-[80%] md:w-[40%] mb-2">Phone no</p>
-          <input placeholder="Enter Phone no" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
+          <input type="tel"  placeholder="Enter Phone no" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
             <p className="w-[80%] md:w-[40%] mb-2">Subject</p>
             <select
             value={selectedPlan}
