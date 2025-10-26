@@ -53,9 +53,9 @@ const Contact = () => {
         Contact Us
       </div>
 
-      <div className="flex flex-col md:flex-row justify-around items-start md:items-center w-full md:w-[90%] gap-10 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-around items-start md:items-center w-full gap-10 md:gap-0">
         {/* Form */}
-        <div className="form-section w-full md:w-[50%] flex flex-col items-center gap-3">
+        <div className="form-section w-full md:w-[50%] flex flex-col items-center gap-2">
           <p className="w-[80%] md:w-[40%] mb-2">Name</p>
           <input placeholder="Enter Name" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
           <p className="w-[80%] md:w-[40%] mb-2">Email</p>
@@ -63,7 +63,10 @@ const Contact = () => {
           <p className="w-[80%] md:w-[40%] mb-2">Phone no</p>
           <input placeholder="Enter Phone no" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-9 rounded-lg active:border-[#FB744F] mb-3" />
           <p className="w-[80%] md:w-[40%] mb-2">Your Requirements</p>
-          <input type="text" placeholder="Enter Your Requirements" className="font-albertSans font-regular border border-[#FB744F] pl-5 w-[80%] md:w-[40%] h-40 rounded-lg active:border-[#FB744F] mb-3 text-top" />
+          <textarea
+  placeholder="Enter Your Requirements"
+  className="font-albertSans font-regular border border-[#FB744F] pl-5 pt-3 w-[80%] md:w-[40%] h-40 rounded-lg active:border-[#FB744F] mb-3 text-top "
+></textarea>
           <div className="font-albertSans font-regular border border-[#FB744F] w-[80%] md:w-[40%] h-9 flex items-center justify-center rounded-lg bg-[#FFEBE5] cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]">
             Submit
           </div>

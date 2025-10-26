@@ -20,42 +20,47 @@ const About2 = () => {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Smooth animation for image
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    // Animate image
     if (imageRef.current) {
       gsap.fromTo(
         imageRef.current,
-        { y: 50, opacity: 0, scale: 0.95 },
+        { y: isMobile ? 0 : 50, opacity: 0, willChange: "transform, opacity" },
         {
           y: 0,
           opacity: 1,
-          scale: 1,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 1,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%", // triggers when 25% visible
+            start: "top 75%",
             toggleActions: "play none none none",
+            once: true,
           },
         }
       );
     }
 
-    // Animate boxes with stagger
-    boxesRef.current.forEach((box, index) => {
+    // Animate boxes
+    boxesRef.current.forEach((box) => {
       gsap.fromTo(
         box,
-        { y: 40, opacity: 0, scale: 0.95 },
+        {
+          y: isMobile ? 0 : 30,
+          opacity: 0,
+          willChange: "transform, opacity",
+        },
         {
           y: 0,
           opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: index * 0.15,
+          duration: isMobile ? 0.6 : 0.7,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: box,
             start: "top 85%",
             toggleActions: "play none none none",
+            once: true,
           },
         }
       );
@@ -86,10 +91,14 @@ const About2 = () => {
       <div className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl '>
         What We Do
       </div>
+
       <div className=' w-full md:w-[90%] flex items-center justify-around'>
+        {/* Image */}
         <div className='hidden md:flex'>
           <img ref={imageRef} src="/about2Laptop.png" />
         </div>
+
+        {/* Boxes */}
         <div content=' w-full md:w-1/2 flex-col items-center gap-4'>
           {[
             "Modern websites that look<br />good on mobile & computer.",
@@ -113,6 +122,7 @@ const About2 = () => {
           ))}
         </div>
       </div>
+
       <div className='h-[5%]'></div>
     </div>
   );
