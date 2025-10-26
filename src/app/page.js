@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./component/Navbar";
 import HeroSection from "./component/HeroSection";
