@@ -8,29 +8,32 @@ const HeroSection = () => {
   const rightRef = useRef(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+  if (!sectionRef.current) return;
 
+  const ctx = gsap.context(() => {
     const leftEl = leftRef.current;
     const rightEl = rightRef.current;
 
-    // Animate left content children (h1, p, button)
     gsap.from(leftEl.children, {
       y: 50,
       opacity: 0,
       duration: 0.8,
       ease: "power3.out",
-      stagger: 0.2, // smooth stagger
+      stagger: 0.2,
     });
 
-    // Animate right image slightly after left
     gsap.from(rightEl, {
       y: 50,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-      delay: 0.4, // ensures left content pops first
+      delay: 0.4,
     });
-  }, []);
+  }, sectionRef);
+
+  return () => ctx.revert(); // 🔥 kills old animations instantly
+}, []);
+
 
   return (
     <div

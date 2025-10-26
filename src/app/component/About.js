@@ -10,33 +10,38 @@ const About = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
-  useEffect(() => {
+   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Animate left text
-    gsap.from(leftRef.current, {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%", // when 25% is in view
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
+    // ✅ GSAP context for safe scoping and cleanup
+    const ctx = gsap.context(() => {
+      // Animate left text
+      gsap.from(leftRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
 
-    // Animate right image
-    gsap.from(rightRef.current, {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      delay: 0.2, // slight delay for staggered effect
-    });
+      // Animate right image
+      gsap.from(rightRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+    }, sectionRef); // binds animations to this section
+
+    return () => ctx.revert(); // 🔥 kills old ScrollTriggers & timelines
   }, []);
 
   return (

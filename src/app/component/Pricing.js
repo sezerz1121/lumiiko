@@ -3,12 +3,36 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { FaCheck } from "react-icons/fa6";
-
+import { useRouter, usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 const Pricing = () => {
   const cardsRef = useRef([]);
+  const router = useRouter();
+    const pathname = usePathname();
+      const navigateToSection = (id, plan) => {
+  if (pathname === "/") {
+    router.push(`/?plan=${plan}#contact`);
+    return;
+  }
 
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  } else {
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  }
+};
+     const navigatePricing =(plan)=>
+  {
+    if (pathname === "/") {
+      router.push(`/${plan}`);
+      console.log(plan)
+      return;
+    }
+  }
   // To add card references dynamically
   cardsRef.current = [];
   const addToRefs = (el) => {
@@ -16,7 +40,7 @@ const Pricing = () => {
       cardsRef.current.push(el);
     }
   };
-
+ 
   useEffect(() => {
     cardsRef.current.forEach((card) => {
       // Animate card container
@@ -112,12 +136,14 @@ const Pricing = () => {
                         {/* Buttons */}
                         <div className='flex flex-col gap-2 mb-3'>
                             <div className='font-albertSans font-medium bg-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
-                                            transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
+                                            transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'
+                                            onClick={()=>navigatePricing("basic")}
+                                            >
                             Read More
                             </div>
 
                             <div
-                            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                            onClick={() => navigateToSection("contact", "basic")}
                              className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                             transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                             Enquire now
@@ -172,12 +198,14 @@ const Pricing = () => {
                             {/* Buttons */}
                             <div className='flex flex-col gap-2 mb-3'>
                                 <div className='font-albertSans font-medium bg-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
-                                                transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
+                                                transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'
+                                                onClick={()=>navigatePricing("standard")}
+                                                >
                                 Read More
                                 </div>
 
                                 <div
-                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                                onClick={() => navigateToSection("contact", "standard")}
                                  className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                                 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                                 Enquire now
@@ -232,12 +260,14 @@ const Pricing = () => {
                             {/* Buttons */}
                             <div className='flex flex-col gap-2 mb-3'>
                                 <div className='font-albertSans font-medium bg-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
-                                                transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
+                                                transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'
+                                                onClick={()=>navigatePricing("ecommerce")}
+                                                >
                                 Read More
                                 </div>
 
                                 <div
-                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                                onClick={() => navigateToSection("contact", "ecommerce")}
                                  className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                                 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                                 Enquire now
@@ -290,13 +320,17 @@ const Pricing = () => {
 
                             {/* Buttons */}
                             <div className='flex flex-col gap-2 mb-3'>
-                                <div className='font-albertSans font-medium bg-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
-                                                transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
+                                <div
+                                 onClick={()=>navigatePricing("premium")}
+                                 className='font-albertSans font-medium bg-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
+                                                transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'
+                                                
+                                                >
                                 Read More
                                 </div>
 
                                 <div
-                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                                onClick={() => navigateToSection("contact", "premium")}
                                  className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                                 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                                 Enquire now
