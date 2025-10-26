@@ -21,11 +21,13 @@ const WhyBuisnessTrustUs = () => {
   useEffect(() => {
     if (!sectionRef.current) return;
 
+    const el = sectionRef.current;
+
     // Animate image
     if (imageRef.current) {
       gsap.fromTo(
         imageRef.current,
-        { y: 50, opacity: 0, scale: 0.95 },
+        { y: 50, opacity: 0, scale: 0.95, willChange: "transform, opacity" },
         {
           y: 0,
           opacity: 1,
@@ -33,33 +35,33 @@ const WhyBuisnessTrustUs = () => {
           duration: 1.2,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%", // 25% visible
+            trigger: el,
+            start: "top 75%",
             toggleActions: "play none none none",
+            once: true,
           },
         }
       );
     }
 
-    // Animate all text elements with slight stagger
-    itemsRef.current.forEach((item, index) => {
-      gsap.fromTo(
-        item,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: index * 0.1,
-          scrollTrigger: {
-            trigger: item,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+    // Animate all text elements together with stagger
+    gsap.fromTo(
+      itemsRef.current,
+      { y: 30, opacity: 0, willChange: "transform, opacity" },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
