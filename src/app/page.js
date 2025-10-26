@@ -7,6 +7,8 @@ import Ourwork from "./component/Ourwork";
 import WhyBuisnessTrustUs from "./component/WhyBuisnessTrustUs";
 import Pricing from "./component/Pricing";
 import Faq from "./component/Faq";
+import Contact from "./component/Contact";
+import Footer from "./component/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       <WhyBuisnessTrustUs/>
       <Pricing/>
       <Faq/>
+      <Contact/>
+      <Footer/>
     </>
   );
 }

@@ -1,9 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const faqRefs = useRef([]);
 
   const faqs = [
     {
@@ -32,21 +37,62 @@ const Faq = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    faqRefs.current.forEach((faq, i) => {
+      if (!faq) return;
+
+      // Animate the card
+      gsap.fromTo(
+        faq,
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: faq,
+            start: "top 75%", // triggers when 25% of element is in view
+          },
+          delay: i * 0.1, // stagger
+        }
+      );
+
+      // Animate any images inside the card
+      const images = faq.querySelectorAll("img");
+      images.forEach((img) => {
+        gsap.fromTo(
+          img,
+          { opacity: 0, scale: 0.8 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: faq,
+              start: "top 75%",
+            },
+          }
+        );
+      });
+    });
+  }, []);
+
   return (
     <div className="w-full min-h-screen md:min-h-[70vh] flex flex-col items-center px-4 sm:px-6 md:px-8 py-10 bg-white gap-10">
-      {/* Heading */}
       <div className="font-poppins font-bold text-2xl sm:text-3xl md:text-4xl text-center leading-snug">
         Frequently Asked Questions
       </div>
 
-      {/* FAQ List */}
       <div className="w-full max-w-3xl flex flex-col gap-4 sm:gap-6">
         {faqs.map((faq, index) => (
           <div
             key={index}
+            ref={(el) => (faqRefs.current[index] = el)}
             className="bg-[#f9f9f9] rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.05)] p-4 sm:p-6 transition-all duration-300"
           >
-            {/* Question */}
             <button
               className="w-full flex justify-between items-center text-left font-poppins font-semibold text-base sm:text-lg md:text-xl focus:outline-none"
               onClick={() => toggleFaq(index)}
@@ -60,7 +106,6 @@ const Faq = () => {
               />
             </button>
 
-            {/* Answer */}
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
                 openIndex === index

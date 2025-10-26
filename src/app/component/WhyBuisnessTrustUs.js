@@ -1,9 +1,75 @@
-import React from 'react'
+"use client";
+import React, { useRef, useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const WhyBuisnessTrustUs = () => {
+  const sectionRef = useRef(null);
+  const itemsRef = useRef([]);
+  const imageRef = useRef(null);
+
+  itemsRef.current = [];
+  const addToRefs = (el) => {
+    if (el && !itemsRef.current.includes(el)) {
+      itemsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    // Animate image
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { y: 50, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%", // 25% visible
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Animate all text elements with slight stagger
+    itemsRef.current.forEach((item, index) => {
+      gsap.fromTo(
+        item,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
-    <>
-         <div className="
+    <div
+      ref={sectionRef}
+      className="
         w-full
         min-h-[60vh]
         md:min-h-[80vh]
@@ -16,33 +82,58 @@ const WhyBuisnessTrustUs = () => {
         bg-white
         gap-15
         md:gap-6
-        
-        ">
-            <div className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl text-center'>
-                Why Businesses Trust Us
-            </div>
-            <div className=' w-full md:w-[90%] flex items-center justify-around'>
-                <div className='hidden md:flex '>
-                    <img src="/TrustLaptop.png" className='scale-114' alt='laptop'/>
-                </div>
-                <div className='flex flex-col items-center md:items-start gap-6'>
-                    <div className='text-xl md:text-2xl font-semibold font-poppins'>Custom Websites Made for Local Success</div>
-                    <div className='flex flex-col items-start gap-2'>
-                        <div className='flex items-center gap-2'><FaArrowRightLong /><p className='text-sm md:text-lg font-semibold font-poppins'> Clear & Honest Pricing – No hidden charges</p></div>
-                        <div className='flex items-center gap-2'><FaArrowRightLong /><p className='text-sm md:text-lg font-semibold font-poppins'> Fast Delivery – Websites ready in just 7–10 days</p></div>
-                        <div className='flex items-center gap-2'><FaArrowRightLong /><p className='text-sm md:text-lg font-semibold font-poppins'> Mobile + SEO Ready – Customers can find you easily</p></div>
-                        <div className='flex items-center gap-2'><FaArrowRightLong /><p className='text-sm md:text-lg font-semibold font-poppins'> Personal Support – Call or WhatsApp anytime</p></div>
-                    </div>
-                    <div className="text-sm md:text-lg font-semibold font-poppins text-justify max-w-sm md:max-w-lg leading-relaxed">
-                        Get a powerful website that builds trust, attracts customers, and grows your business. Whether it’s a restaurant, shop, or service, we make websites that are affordable, fast, and designed for results.
-                    </div>
+      "
+    >
+      <div
+        ref={addToRefs}
+        className='font-poppins font-bold w-full flex items-center justify-center text-3xl md:text-4xl text-center'
+      >
+        Why Businesses Trust Us
+      </div>
 
-                </div>
-            </div>
-            
+      <div className=' w-full md:w-[90%] flex items-center justify-around'>
+        <div className='hidden md:flex'>
+          <img
+            ref={imageRef}
+            src="/TrustLaptop.png"
+            className='scale-114'
+            alt='laptop'
+          />
         </div>
-    </>
-  )
-}
 
-export default WhyBuisnessTrustUs
+        <div className='flex flex-col items-center md:items-start gap-6'>
+          <div ref={addToRefs} className='text-xl md:text-2xl font-semibold font-poppins'>
+            Custom Websites Made for Local Success
+          </div>
+
+          <div className='flex flex-col items-start gap-2'>
+            {[
+              "Clear & Honest Pricing – No hidden charges",
+              "Fast Delivery – Websites ready in just 7–10 days",
+              "Mobile + SEO Ready – Customers can find you easily",
+              "Personal Support – Call or WhatsApp anytime",
+            ].map((text, idx) => (
+              <div
+                ref={addToRefs}
+                key={idx}
+                className='flex items-center gap-2'
+              >
+                <FaArrowRightLong />
+                <p className='text-sm md:text-lg font-semibold font-poppins'>{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div
+            ref={addToRefs}
+            className="text-sm md:text-lg font-semibold font-poppins text-justify max-w-sm md:max-w-lg leading-relaxed"
+          >
+            Get a powerful website that builds trust, attracts customers, and grows your business. Whether it’s a restaurant, shop, or service, we make websites that are affordable, fast, and designed for results.
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WhyBuisnessTrustUs;

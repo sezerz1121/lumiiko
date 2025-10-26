@@ -1,7 +1,68 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { FaCheck } from "react-icons/fa6";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Pricing = () => {
+  const cardsRef = useRef([]);
+
+  // To add card references dynamically
+  cardsRef.current = [];
+  const addToRefs = (el) => {
+    if (el && !cardsRef.current.includes(el)) {
+      cardsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    cardsRef.current.forEach((card) => {
+      // Animate card container
+      gsap.fromTo(
+        card,
+        { y: 50, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 75%", // 25% visible
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Animate all children inside card (text, icons, hr)
+      const children = card.querySelectorAll("p, div, hr, svg, img");
+      gsap.fromTo(
+        children,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 75%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Clean up on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
     <>
          <div className="

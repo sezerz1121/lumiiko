@@ -1,19 +1,59 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const sectionRef = useRef(null);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    // Animate left text
+    gsap.from(leftRef.current, {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 75%", // when 25% is in view
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+
+    // Animate right image
+    gsap.from(rightRef.current, {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 75%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.2, // slight delay for staggered effect
+    });
+  }, []);
+
   return (
-    <div className="
-      w-full
-      h-[90vh]
-      flex
-      items-center
-      justify-center
-      px-4
-      py-10
-      bg-white
-    ">
-      <div
-        className="
+    <div
+      ref={sectionRef}
+      className="
+        w-full
+        h-[90vh]
+        flex
+        items-center
+        justify-center
+        px-4
+        py-10
+        bg-white
+      "
+    >
+      <div className="
           flex
           flex-col
           md:flex-row
@@ -26,13 +66,12 @@ const About = () => {
         "
       >
         {/* LEFT TEXT SECTION */}
-        <div className="
+        <div ref={leftRef} className="
           w-full
           md:w-1/2
           md:p-[5%]
           text-center
           md:text-left
-          
         ">
           <h2 className="font-uxum font-bold text-2xl sm:text-3xl md:text-4xl text-[#FB744F] mb-3">
             Who We Are
@@ -42,8 +81,7 @@ const About = () => {
             We are a small, dedicated team that loves working with businesses.
             Whether you run a beauty parlour, medical clinic, restaurant, or
             coaching class – we help you build a strong online presence.
-            </p>
-
+          </p>
 
           <h3 className="font-uxum font-bold text-lg sm:text-xl mb-3 sm:mb-4 text-left">
             Our mission is simple
@@ -55,7 +93,7 @@ const About = () => {
         </div>
 
         {/* RIGHT IMAGE SECTION */}
-        <div className="
+        <div ref={rightRef} className="
           w-full
           md:w-1/2
           flex
