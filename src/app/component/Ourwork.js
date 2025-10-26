@@ -71,6 +71,7 @@ const Ourwork = () => {
 
   return (
     <div
+    id="ourwork"
       ref={containerRef}
       className="
         w-full

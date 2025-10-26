@@ -42,6 +42,7 @@ const Contact = () => {
 
   return (
     <div
+        id="contact"
       ref={sectionRef}
       className="w-full min-h-screen md:min-h-[90vh] flex flex-col items-center px-4 sm:px-6 md:px-8 py-10 bg-white gap-10"
     >

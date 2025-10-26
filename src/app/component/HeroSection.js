@@ -1,9 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
@@ -16,34 +13,28 @@ const HeroSection = () => {
     const leftEl = leftRef.current;
     const rightEl = rightRef.current;
 
-    // Animate left content
-    gsap.from(leftEl, {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%", // trigger when top of section hits 75% of viewport
-      },
+    // Animate left content children (h1, p, button)
+    gsap.from(leftEl.children, {
       y: 50,
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
       ease: "power3.out",
+      stagger: 0.2, // smooth stagger
     });
 
-    // Animate right image
+    // Animate right image slightly after left
     gsap.from(rightEl, {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%", // same trigger
-      },
       y: 50,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-      delay: 0.2, // slight delay for staggered feel
+      delay: 0.4, // ensures left content pops first
     });
   }, []);
 
   return (
     <div
+      id="home"
       ref={sectionRef}
       className="
         bg-[url('/herosectionbg.png')]

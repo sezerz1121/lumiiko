@@ -41,6 +41,7 @@ const About = () => {
 
   return (
     <div
+    id="about"
       ref={sectionRef}
       className="
         w-full

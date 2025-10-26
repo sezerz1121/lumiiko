@@ -65,7 +65,10 @@ const Pricing = () => {
 
   return (
     <>
-         <div className="
+         <div
+         id="pricing"
+          className="
+         
                 w-full
                 min-h-screen
                 
