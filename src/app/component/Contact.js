@@ -160,9 +160,9 @@ const Contact = () => {
           </div>
           <div className="font-albertSans font-bold text-xs flex flex-col items-center gap-2 justify-center">
             <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer"
-                onClick={() => window.location.href = "mailto:Lumiiko@gmail.com"}>
+                onClick={() => window.location.href = "mailto:lumiikotech@gmail.com"}>
               <FiMail />
-              <p>Lumiiko@gmail.com</p>
+              <p>lumiikotech@gmail.com</p>
             </div>
 
             <div className="font-albertSans font-semibold text-sm md:text-lg w-full flex items-center gap-4 cursor-pointer"
