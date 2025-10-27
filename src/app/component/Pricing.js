@@ -143,7 +143,7 @@ const Pricing = () => {
                             </div>
 
                             <div
-                            onClick={() => navigateToSection("contact", "basic")}
+                           onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                              className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                             transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                             Enquire now
@@ -205,7 +205,7 @@ const Pricing = () => {
                                 </div>
 
                                 <div
-                                onClick={() => navigateToSection("contact", "standard")}
+                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                                  className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                                 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                                 Enquire now
@@ -267,7 +267,7 @@ const Pricing = () => {
                                 </div>
 
                                 <div
-                                onClick={() => navigateToSection("contact", "ecommerce")}
+                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                                  className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                                 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                                 Enquire now
@@ -330,7 +330,7 @@ const Pricing = () => {
                                 </div>
 
                                 <div
-                                onClick={() => navigateToSection("contact", "premium")}
+                                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                                  className='font-albertSans font-medium bg-[#232323] text-white flex justify-center items-center h-12 rounded-xl tracking-tight border border-[#737373]/50 cursor-pointer shadow-2xs 
                                                 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'>
                                 Enquire now
