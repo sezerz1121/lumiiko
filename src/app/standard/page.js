@@ -12,7 +12,7 @@ const page = () => {
   // Smooth scroll or navigate to home if on another page
   const navigateToSection = (id, plan) => {
   if (pathname !== "/") {
-    router.push(`/?plan=${plan}#contact`);
+    router.push(`/#contact`);
     return;
   }
 
