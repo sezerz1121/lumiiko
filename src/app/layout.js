@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono, Poppins, Albert_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Head from "next/head";
 // Google Fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,7 +84,14 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${uxum.variable} ${neue.variable} ${albertSans.variable}`}
+ 
     >
+         <Head>
+        <meta
+          name="google-site-verification"
+          content="m46_nK1vw7wpknu8tNeAcUb0nd_wTOgrDi14mMA-WpE"
+        />
+      </Head>
       <body className="antialiased">{children}</body>
     </html>
   );
