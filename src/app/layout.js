@@ -87,10 +87,7 @@ export default function RootLayout({ children }) {
  
     >
          <Head>
-        <meta
-          name="google-site-verification"
-          content="m46_nK1vw7wpknu8tNeAcUb0nd_wTOgrDi14mMA-WpE"
-        />
+        <meta name="google-site-verification" content="m46_nK1vw7wpknu8tNeAcUb0nd_wTOgrDi14mMA-WpE" />
       </Head>
       <body className="antialiased">{children}</body>
     </html>
