@@ -74,7 +74,10 @@ const neue = localFont({
 
 export const metadata = {
   title: "Lumiiko",
-  description: "Lumiiko creates affordable, fast, and professional websites that help small businesses in India attract and convert customers."
+  description: "Lumiiko creates affordable, fast, and professional websites that help small businesses in India attract and convert customers.",
+  verification: {
+    google: "m46_nK1vw7wpknu8tNeAcUb0nd_wTOgrDi14mMA-WpE",
+  },
 };
 
 
@@ -86,9 +89,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${uxum.variable} ${neue.variable} ${albertSans.variable}`}
  
     >
-         <Head>
-        <meta name="google-site-verification" content="m46_nK1vw7wpknu8tNeAcUb0nd_wTOgrDi14mMA-WpE" />
-      </Head>
+   
       <body className="antialiased">{children}</body>
     </html>
   );
