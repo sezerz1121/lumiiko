@@ -73,8 +73,22 @@ const neue = localFont({
 });
 
 export const metadata = {
-  title: "Lumiiko",
-  description: "Lumiiko creates affordable, fast, and professional websites that help small businesses in India attract and convert customers.",
+  title: "Affordable Web Design Agency in India | Lumiiko",
+  description: "Lumiiko builds fast, SEO-friendly websites for Indian small businesses and local startups. Get a modern, mobile-first site that attracts customers and grows your business — starting at ₹12,999.",
+  keywords: ["web design India", "affordable website design", "small business websites", "local SEO websites", "Lumiiko web agency"],
+  alternates: {
+    canonical: "https://lumiiko.vercel.app/",
+  },
+  openGraph: {
+    title: "Lumiiko | Affordable Web Design Agency for Indian Small Businesses",
+    description: "Professional, mobile-first websites that help you get more local clients and grow your business.",
+    url: "https://lumiiko.vercel.app/",
+    siteName: "Lumiiko",
+    locale: "en_IN",
+    type: "website",
+  },
+
+
   verification: {
     google: "m46_nK1vw7wpknu8tNeAcUb0nd_wTOgrDi14mMA-WpE",
   },
