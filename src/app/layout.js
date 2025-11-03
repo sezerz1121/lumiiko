@@ -73,9 +73,68 @@ const neue = localFont({
 });
 
 export const metadata = {
-  title: "Affordable Web Design Agency in India | Lumiiko",
+  title: "Lumiiko | Affordable Web Design Agency in India ",
   description: "Lumiiko builds fast, SEO-friendly websites for Indian small businesses and local startups. Get a modern, mobile-first site that attracts customers and grows your business — starting at ₹12,999.",
-  keywords: ["web design India", "affordable website design", "small business websites", "local SEO websites", "Lumiiko web agency"],
+  keywords: ["web design India", "affordable website design", "small business websites", "local SEO websites", "Lumiiko web agency",  "Surat", "Ahmedabad", "Pune", "Mumbai", "Bangalore", "Delhi", "India",
+
+    // 🔹 Service + Location
+    "website designer in Surat",
+    "website designer in Ahmedabad",
+    "website designer in Pune",
+    "website designer in Mumbai",
+    "website designer in Bangalore",
+    "website designer in Delhi",
+
+    "website development company Surat",
+    "website development company Ahmedabad",
+    "website development company Pune",
+    "website development company Mumbai",
+    "website development company Bangalore",
+    "website development company Delhi",
+
+    "small business website builder Surat",
+    "small business website builder Ahmedabad",
+    "small business website builder Pune",
+    "small business website builder Mumbai",
+    "small business website builder Bangalore",
+    "small business website builder Delhi",
+
+    "affordable website design Surat",
+    "affordable website design Ahmedabad",
+    "affordable website design Pune",
+    "affordable website design Mumbai",
+    "affordable website design Bangalore",
+    "affordable website design Delhi",
+
+    "cheap website for shop in Surat",
+    "cheap website for shop in Ahmedabad",
+    "cheap website for shop in Pune",
+    "cheap website for shop in Mumbai",
+    "cheap website for shop in Bangalore",
+    "cheap website for shop in Delhi",
+
+    // 🔹 Problem / Need
+    "how to make a website for my business India",
+    "website cost for small business India",
+    "do I need a website for my shop India",
+    "we need website quickly for our business in India",
+
+    // 🔹 Feature / Value
+    "mobile friendly website for business India",
+    "multilingual website designer India",
+    "local SEO website company India",
+    "fast loading website small business India",
+
+    // 🔹 Price / Budget
+    "website cost Delhi small business",
+    "cheap website builder India for shop",
+    "affordable website design India ₹12000",
+
+    // 🔹 Brand
+    "Lumiiko web agency",
+    "Lumiiko website design",
+    "Lumiiko India"
+  ],
   alternates: {
     canonical: "https://lumiiko.vercel.app/",
   },
