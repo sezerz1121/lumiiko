@@ -96,7 +96,7 @@ const Ourwork = () => {
           {
             href: "https://rajpalassociates-fe.vercel.app/",
             img: "/ourworkrealestate.png",
-            text: "Website for Real Estate Developer",
+            text: "Website for Real Estate Developer (demo)",
           },
           {
             href: "https://myhnh.in/",
