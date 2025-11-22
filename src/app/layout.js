@@ -136,12 +136,12 @@ export const metadata = {
     "Lumiiko India"
   ],
   alternates: {
-    canonical: "https://lumiiko.vercel.app/",
+    canonical: "https://www.lumiiko.in/",
   },
   openGraph: {
     title: "Lumiiko | Affordable Web Design Agency for Indian Small Businesses",
     description: "Professional, mobile-first websites that help you get more local clients and grow your business.",
-    url: "https://lumiiko.vercel.app/",
+    url: "https://www.lumiiko.in/",
     siteName: "Lumiiko",
     locale: "en_IN",
     type: "website",
