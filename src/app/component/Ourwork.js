@@ -94,11 +94,6 @@ const Ourwork = () => {
       <div className="h-[80%] w-[80%] md:w-full flex flex-col md:flex-row gap-6 items-center justify-around ">
         {[
           {
-            href: "https://rajpalassociates-fe.vercel.app/",
-            img: "/ourworkrealestate.png",
-            text: "Website for Real Estate Developer (demo)",
-          },
-          {
             href: "https://myhnh.in/",
             img: "/ourworkecommerce.png",
             text: "Ecommerce Website for Single Product",
