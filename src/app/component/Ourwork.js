@@ -99,10 +99,15 @@ const Ourwork = () => {
             text: "Ecommerce Website for Single Product",
           },
           {
-            href: "https://hcbrother-waitlist.vercel.app/",
+            href: "https://www.hcwrld.in/",
             img: "/ourworkwaitlist.png",
             text: "Waiting list Website for Streetwear Brand",
           },
+          {/* {
+            href: "https://rajpalassociates-fe.vercel.app/",
+            img: "/ourworkrealestate.png",
+            text: "Website for Real Estate Developer (demo)",
+          }, */}
         ].map((item, idx) => (
           <div
             key={idx}
