@@ -94,7 +94,7 @@ const Ourwork = () => {
       <div className="h-[80%] w-[80%] md:w-full flex flex-col md:flex-row gap-6 items-center justify-around ">
         {[
           {
-            href: "https://myhnh.in/",
+            href: "https://myhalenhearty.com",
             img: "/ourworkecommerce.png",
             text: "Ecommerce Website for Single Product",
           },
@@ -105,9 +105,9 @@ const Ourwork = () => {
           }
           ,
           {
-            href: "https://rajpalassociates-fe.vercel.app/",
+            href: "https://www.reliant-networks.co.uk/",
             img: "/ourworkrealestate.png",
-            text: "Website for Real Estate Developer (demo)",
+            text: "Website for IT Company (UK BASED)",
           }
          
         ].map((item, idx) => (
