@@ -106,7 +106,7 @@ const Ourwork = () => {
           ,
           {
             href: "https://www.reliant-networks.co.uk/",
-            img: "/ourworkrealestate.png",
+            img: "/ourworkIT.png",
             text: "Website for IT Company (UK BASED)",
           }
          
