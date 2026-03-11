@@ -101,7 +101,7 @@ const Ourwork = () => {
           {
             href: "https://www.hcwrld.in/",
             img: "/ourworkwaitlist.png",
-            text: "Waiting list Website for Streetwear Brand",
+            text: "Ecommerce Website for Streetwear Brand",
           }
           ,
           {
